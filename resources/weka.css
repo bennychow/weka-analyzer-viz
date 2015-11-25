@@ -1,0 +1,48 @@
+.node circle {
+  fill: #fff;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
+.node {
+  font: 8px sans-serif;
+}
+
+.link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 1.5px;
+}
+
+.reportArea .pentaho-titled-toolbar {
+  cursor: pointer;
+  padding-left: 5px;
+}
+
+.reportArea .pentaho-titled-toolbar .dijitTitlePaneTextNode {
+  font-size: 13px;
+  padding-left: 11px;
+  font-family: OpenSansRegular, sans-serif;
+}
+
+.reportArea PRE {
+  font-size: 14px;
+}
+
+#titleDiv {
+position: absolute;
+bottom: 0px;
+left: 0px;
+width: 300px;
+height: 80px;
+font-size: 12px;
+}
+
+div.tipsy-w {opacity: 1 !important; }
+div.tipsy-w .tipsy-arrow {display:none !important;}
+
+.viz-image.WEKA-CLUSTER, .viz-image.WEKA-CLASSIFY, .viz-image.WEKA-ATTRIBUTE-SELECTION{
+    background: url(weka_analyzer.png) no-repeat;
+    width: 168px;
+    height: 119px;
+}

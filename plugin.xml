@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<plugin title="weka-analyzer-viz"> 
+    <static-paths>
+        <static-path url="/weka-analyzer-viz/resources" localFolder="resources"/>
+    </static-paths>
+    <external-resources> 
+        <file context="analyzer">content/weka-analyzer-viz/resources/weka.js</file> 
+        <file context="analyzer">content/weka-analyzer-viz/resources/weka_analyzer_plugin.js</file> 
+        <file context="analyzer">content/weka-analyzer-viz/resources/weka.css</file>
+        <file context="analyzer">content/weka-analyzer-viz/resources/d3.v2.min.js</file>
+    </external-resources>
+</plugin>  
