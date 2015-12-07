@@ -12,5 +12,6 @@ This plugin adds visualizations to Analyzer and requires Pentaho Enterprise Edit
 
 You can install this plugin using the Pentaho Marketplace.
 
-
+Don't miss the tutorial for these visualizations here:
+https://github.com/bennychow/weka-analyzer-viz/raw/master/tutorial/Weka%20Visualizations%20Tutorial.docx
 
