@@ -23,8 +23,8 @@ var analyzerApi;
 
 // Utilize the required API for verifying that the VizController has been loaded before registration
 pen.require(
-	[ "analyzer/cv_api", "common-ui/vizapi/VizController" ],
-	function(api) {
+	[ "analyzer/cv_api", "cdf/lib/jquery", "dijit/TitlePane", "common-ui/vizapi/VizController" ],
+	function(api, $, TitlePane) {
     analyzerApi = api;
     
 	  // Define and register classification viz
@@ -287,7 +287,7 @@ pen.require(
           this.treeDiv.id = "treeDiv";
           this.treeDiv.style.width = "100%";
           this.treeDiv.style.height = "100%";
-          var tp = new dijit.TitlePane({
+          var tp = new TitlePane({
             title : "Decision Tree",
             content : this.treeDiv
           });
@@ -301,7 +301,7 @@ pen.require(
         // Add additional panes for model outputs such as Model Accuracy and Confusion Matrix
         var weka = this.data.weka;
         for ( var i = 0; i < weka.length; i++) {
-          var tp = new dijit.TitlePane({
+          var tp = new TitlePane({
             title : weka[i].title,
             content : '<pre>' + weka[i].content + '</pre>',
             open : (!this.data.tree && i == 0) // Open the first pane if tree is not present
@@ -313,7 +313,7 @@ pen.require(
 
         // Add pane for exporting model binary output for PDI
         if (this.options['includeExportPane']) {
-          var tp = new dijit.TitlePane(
+          var tp = new TitlePane(
             {
             title : "Export Model",
             content : 'You can <a style="text-decoration: underline;" href="javascript:exportModel();">export</a> this Weka model and use it in a Penthao Data Integration transformation.'
