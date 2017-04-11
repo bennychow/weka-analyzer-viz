@@ -105,17 +105,26 @@ function exportModel() {
   cv.getActiveReport().visualization.args['exportModel'] = true;
   cv.getActiveReport().saveUIAttributes();
   var requestId = null;
-  try {
-    requestId = cv.io.initAsyncRequest({
-              reportXML:cv.getActiveReport().getReportXml(),
-              action:"REFRESH",
-              format:"CSV",
-              dirtyFlag:false,
-              prevId:""});
-  } finally {
+  
+  // initAsyncRequest was made async in 7.0 so provide a callback if
+  // using the Analyzer Weka plugin on 7.x servers.  Otherwise, pre-7.0
+  // will synchronously return the requestId
+  requestId = cv.io.initAsyncRequest({
+    reportXML:cv.getActiveReport().getReportXml(),
+    action:"REFRESH",
+    format:"CSV",
+    dirtyFlag:false,
+    prevId:""}, exportModelHelper);
+  if (requestId) {
+    exportModelHelper(requestId);
+  }
+}
+
+function exportModelHelper(requestId) {
+  if(requestId) {
     cv.getActiveReport().visualization.args['exportModel'] = false;
     cv.getActiveReport().saveUIAttributes();    
+    var url = "service/ajax/getReportHTML?requestId="+requestId+"&timeout=-1";
+    window.open(url);
   }
-  var url = "service/ajax/getReportHTML?requestId="+requestId+"&timeout=-1";
-  window.open(url);
 }
