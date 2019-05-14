@@ -1,7 +1,7 @@
 /*!
  * PENTAHO CORPORATION PROPRIETARY AND CONFIDENTIAL
  *
- * Copyright 2002 - 2014 Pentaho Corporation (Pentaho). All rights reserved.
+ * Copyright 2002 - 2019 Pentaho Corporation (Pentaho). All rights reserved.
  *
  * NOTICE: All information including source code contained herein is, and
  * remains the sole property of Pentaho and its licensors. The intellectual
@@ -22,7 +22,7 @@
 var analyzerApi;
 
 // Utilize the required API for verifying that the VizController has been loaded before registration
-pen.require(
+require(
 	[ "analyzer/cv_api", "cdf/lib/jquery", "dijit/TitlePane", "common-ui/vizapi/VizController" ],
 	function(api, $, TitlePane) {
     analyzerApi = api;
